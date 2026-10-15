@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callforhelp | Safe & Confidential Mental Health Listening Line</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Outfitt -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            200: '#99f6e4',
+                            300: '#5eead4',
+                            400: '#2dd4bf',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a',
+                            950: '#042f2e',
+                        },
+                        accent: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            900: '#0c4a6e',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(209, 250, 229, 0.5);
+        }
+        .pulse-subtle {
+            animation: pulse-ring 2.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.98); box-shadow: 0 0 0 0 rgba(20, 184, 166, 0.5); }
+            70% { transform: scale(1); box-shadow: 0 0 0 16px rgba(20, 184, 166, 0); }
+            100% { transform: scale(0.98); box-shadow: 0 0 0 0 rgba(20, 184, 166, 0); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-brand-200 selection:text-brand-900">
+
+    <!-- Announcement / Status Bar -->
+    <div class="bg-brand-900 text-brand-100 px-4 py-2 text-xs md:text-sm font-medium text-center flex items-center justify-center gap-2 shadow-sm">
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+        <span>Line Active & Free: Speak with an empathetic listener today. You are not alone.</span>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-slate-100 transition-all">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-brand-400 text-white flex items-center justify-center shadow-md shadow-brand-500/20">
+                    <i data-lucide="heart-handshake" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <span class="font-display font-bold text-xl sm:text-2xl text-slate-900 tracking-tight">Call<span class="text-brand-600">forhelp</span></span>
+                    <span class="block text-[10px] text-slate-500 font-medium tracking-wide uppercase -mt-1">Nigeria Support Line</span>
+                </div>
+            </div>
+
+            <!-- Navigation Actions -->
+            <div class="flex items-center gap-3">
+                <a href="#how-it-works" class="hidden sm:inline-flex text-xs sm:text-sm font-medium text-slate-600 hover:text-brand-600 transition px-3 py-2">
+                    How it Works
+                </a>
+                <button id="open-settings-btn" title="Configure Phone Number" class="p-2 text-slate-400 hover:text-slate-600 rounded-lg hover:bg-slate-100 transition">
+                    <i data-lucide="settings" class="w-5 h-5"></i>
+                </button>
+                <a id="header-whatsapp-btn" href="#" target="_blank" class="bg-brand-50 text-brand-700 hover:bg-brand-100 border border-brand-200 text-xs sm:text-sm font-semibold px-3 sm:px-4 py-2 rounded-xl transition flex items-center gap-1.5 shadow-sm">
+                    <i data-lucide="phone-call" class="w-4 h-4 text-brand-600"></i>
+                    <span>Connect</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Body -->
+    <main class="flex-grow">
+        
+        <!-- Hero Section -->
+        <section class="relative overflow-hidden pt-12 pb-20 md:pt-20 md:pb-32 bg-gradient-to-b from-brand-50/60 via-slate-50 to-slate-50">
+            <!-- Decorative background elements -->
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-200/30 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute top-1/3 right-10 w-72 h-72 bg-accent-100/40 rounded-full blur-2xl pointer-events-none"></div>
+
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+                <!-- Trust Badge -->
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-brand-200 text-brand-800 text-xs sm:text-sm font-medium shadow-sm mb-6">
+                    <i data-lucide="shield-check" class="w-4 h-4 text-brand-600"></i>
+                    <span>100% Confidential • Non-Judgmental • Always Ready</span>
+                </div>
+
+                <!-- Main Headline -->
+                <h1 class="font-display text-3xl sm:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight leading-tight sm:leading-tight mb-6">
+                    Feeling overwhelmed? <br class="hidden sm:inline">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-accent-600">You don't have to carry it alone.</span>
+                </h1>
+
+                <!-- Subheadline -->
+                <p class="text-base sm:text-lg md:text-xl text-slate-600 max-w-2xl mx-auto font-normal leading-relaxed mb-10">
+                    Whatever you are going through, there is always a better option. Reach out now to vent, talk things through, and get calm guidance in a warm, confidential safe space.
+                </p>
+
+                <!-- Primary CTA Container -->
+                <div class="flex flex-col items-center justify-center gap-4 max-w-md mx-auto">
+                    <a id="hero-main-cta" href="#" target="_blank" class="w-full pulse-subtle bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-lg sm:text-xl px-8 py-5 rounded-2xl shadow-xl shadow-emerald-600/25 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-3 border border-emerald-400/30">
+                        <i data-lucide="message-circle" class="w-7 h-7 fill-white/20"></i>
+                        <span>Speak to Someone on WhatsApp</span>
+                    </a>
+                    
+                    <p class="text-xs sm:text-sm text-slate-500 flex items-center gap-1.5">
+                        <i data-lucide="clock" class="w-4 h-4 text-slate-400"></i>
+                        <span>Direct Voice Call or Chat available anytime</span>
+                    </p>
+                </div>
+
+                <!-- Direct Number Display Badge -->
+                <div class="mt-8 inline-flex items-center gap-2 text-xs text-slate-500 bg-white/60 backdrop-blur border border-slate-200/80 px-4 py-2 rounded-full">
+                    <span>Active Helpline WhatsApp Number:</span>
+                    <strong id="display-phone-num" class="text-slate-800 font-semibold">+234 800 000 0000</strong>
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Pillars / Why Reach Out Section -->
+        <section class="py-16 bg-white border-y border-slate-100">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <h2 class="font-display text-2xl sm:text-3xl font-bold text-slate-900 mb-3">Why Callforhelp?</h2>
+                    <p class="text-slate-600 text-sm sm:text-base">We believe everybody deserves a listening ear, gentle understanding, and relief from emotional burdens.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                    <!-- Feature Card 1 -->
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:border-brand-200 hover:shadow-lg hover:shadow-brand-500/5 transition duration-300">
+                        <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center mb-5">
+                            <i data-lucide="lock" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-display font-semibold text-lg text-slate-900 mb-2">100% Confidential</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Your identity and conversations remain private and completely protected. Share safely without worry.</p>
+                    </div>
+
+                    <!-- Feature Card 2 -->
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:border-brand-200 hover:shadow-lg hover:shadow-brand-500/5 transition duration-300">
+                        <div class="w-12 h-12 rounded-xl bg-accent-100 text-accent-600 flex items-center justify-center mb-5">
+                            <i data-lucide="heart" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-display font-semibold text-lg text-slate-900 mb-2">Zero Judgment Zone</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">No matter your feelings, worries, or struggles, we listen with pure empathy, warmth, and respect.</p>
+                    </div>
+
+                    <!-- Feature Card 3 -->
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:border-brand-200 hover:shadow-lg hover:shadow-brand-500/5 transition duration-300">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center mb-5">
+                            <i data-lucide="ear" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-display font-semibold text-lg text-slate-900 mb-2">Active Listening</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Speak freely to someone who pays full attention, helps de-escalate anxiety, and calms your mind.</p>
+                    </div>
+
+                    <!-- Feature Card 4 -->
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:border-brand-200 hover:shadow-lg hover:shadow-brand-500/5 transition duration-300">
+                        <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center mb-5">
+                            <i data-lucide="phone-incoming" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-display font-semibold text-lg text-slate-900 mb-2">Caring Follow-Ups</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Optionally receive gentle follow-up check-ins so you know someone is genuinely looking out for you.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="py-16 md:py-24 bg-slate-50">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <span class="text-brand-600 font-semibold text-xs tracking-wider uppercase bg-brand-100/60 px-3 py-1 rounded-full">Simple Process</span>
+                    <h2 class="font-display text-2xl sm:text-4xl font-bold text-slate-900 mt-3 mb-4">How Callforhelp Works</h2>
+                    <p class="text-slate-600 text-sm sm:text-base">Getting support shouldn't be complicated or terrifying. We've made it as simple as a single tap.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 relative">
+                    <!-- Step 1 -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm relative text-center flex flex-col items-center">
+                        <div class="w-12 h-12 rounded-full bg-brand-600 text-white font-display font-bold text-lg flex items-center justify-center mb-6 shadow-md shadow-brand-600/20">1</div>
+                        <h3 class="font-display font-semibold text-xl text-slate-900 mb-3">Tap to Call</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Click any button on this page to launch WhatsApp directly on your phone or browser.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm relative text-center flex flex-col items-center">
+                        <div class="w-12 h-12 rounded-full bg-brand-600 text-white font-display font-bold text-lg flex items-center justify-center mb-6 shadow-md shadow-brand-600/20">2</div>
+                        <h3 class="font-display font-semibold text-xl text-slate-900 mb-3">Talk & Vent</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Choose to start a standard WhatsApp voice call or drop a simple text message. Take your time.</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm relative text-center flex flex-col items-center">
+                        <div class="w-12 h-12 rounded-full bg-brand-600 text-white font-display font-bold text-lg flex items-center justify-center mb-6 shadow-md shadow-brand-600/20">3</div>
+                        <h3 class="font-display font-semibold text-xl text-slate-900 mb-3">Feel Heard & Calm</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Work through your feelings with a supportive peer listener and rediscover your emotional footing.</p>
+                    </div>
+                </div>
+
+                <!-- Secondary Callout -->
+                <div class="mt-16 bg-gradient-to-r from-brand-900 to-slate-900 rounded-3xl p-8 sm:p-10 text-white text-center shadow-xl relative overflow-hidden">
+                    <div class="relative z-10 max-w-2xl mx-auto">
+                        <h3 class="font-display text-2xl sm:text-3xl font-bold mb-3">Ready to talk to someone right now?</h3>
+                        <p class="text-brand-100 text-sm sm:text-base mb-8">It takes courage to reach out, but you are just one click away from a supportive voice.</p>
+                        <a id="secondary-whatsapp-btn" href="#" target="_blank" class="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-7 py-4 rounded-xl shadow-lg transition transform hover:-translate-y-0.5">
+                            <i data-lucide="phone" class="w-5 h-5 fill-slate-950"></i>
+                            <span>Connect on WhatsApp Free</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Safety Notice & Emergency Disclaimer -->
+        <section class="py-12 bg-amber-50/70 border-y border-amber-200/60">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6">
+                <div class="flex flex-col sm:flex-row items-start gap-4">
+                    <div class="p-3 bg-amber-100 rounded-xl text-amber-800 shrink-0">
+                        <i data-lucide="alert-triangle" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-display font-bold text-amber-950 text-base sm:text-lg mb-1">Important Safety Notice</h4>
+                        <p class="text-amber-900/80 text-xs sm:text-sm leading-relaxed">
+                            <strong>Callforhelp</strong> is a confidential peer support and active listening initiative designed for emotional comfort and venting. We are not a clinical psychiatric hospital or medical emergency room. If you or someone you know is in immediate life-threatening physical danger, please contact national emergency services immediately at <strong>112</strong> or visit the nearest medical health center.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-10 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-brand-600 text-white flex items-center justify-center">
+                    <i data-lucide="heart-handshake" class="w-5 h-5"></i>
+                </div>
+                <span class="font-display font-bold text-lg text-white">Callforhelp</span>
+            </div>
+
+            <p class="text-xs text-slate-500 text-center md:text-left">
+                &copy; <span id="year"></span> Callforhelp Nigeria Initiative. Supporting emotional well-being everywhere.
+            </p>
+
+            <div class="flex items-center gap-4 text-xs">
+                <button id="footer-settings-link" class="hover:text-slate-200 transition underline underline-offset-4">
+                    Admin Settings
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Admin Settings Modal (For custom WhatsApp Phone Number configuration) -->
+    <div id="settings-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-100 transform transition-all">
+            <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
+                <div class="flex items-center gap-2 text-slate-900 font-display font-bold text-lg">
+                    <i data-lucide="sliders" class="w-5 h-5 text-brand-600"></i>
+                    <span>Helpline Phone Configuration</span>
+                </div>
+                <button id="close-settings-btn" class="text-slate-400 hover:text-slate-600 p-1">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+                Update your hotline's phone number here. When saved, all "Call on WhatsApp" buttons will immediately direct users to call or message this designated WhatsApp number.
+            </p>
+
+            <form id="phone-config-form" class="space-y-4">
+                <div>
+                    <label for="whatsapp-number" class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">
+                        WhatsApp Phone Number (with Country Code)
+                    </label>
+                    <input 
+                        type="text" 
+                        id="whatsapp-number" 
+                        placeholder="e.g. 2348000000000" 
+                        class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 text-sm text-slate-900 outline-none transition font-mono"
+                        required
+                    />
+                    <span class="text-[11px] text-slate-400 mt-1 block">Include country code without '+' or spaces (e.g. 2348012345678 for Nigeria)</span>
+                </div>
+
+                <div>
+                    <label for="greeting-msg" class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">
+                        Default Greeting Message (Optional)
+                    </label>
+                    <textarea 
+                        id="greeting-msg" 
+                        rows="2"
+                        placeholder="Hello Callforhelp, I would like to speak to someone." 
+                        class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 text-sm text-slate-900 outline-none transition"
+                    ></textarea>
+                </div>
+
+                <div class="pt-2 flex items-center justify-end gap-3">
+                    <button type="button" id="cancel-settings-btn" class="px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-600 hover:bg-slate-100 transition">
+                        Cancel
+                    </button>
+                    <button type="submit" class="px-5 py-2.5 rounded-xl text-xs font-semibold bg-brand-600 hover:bg-brand-700 text-white shadow-md shadow-brand-600/20 transition">
+                        Save Changes
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Application Script -->
+    <script>
+        // Default Configuration
+        const DEFAULT_PHONE = "2348000000000"; // Default placeholder Nigerian phone number
+        const DEFAULT_MSG = "Hello Callforhelp, I am reaching out to talk to someone.";
+
+        // DOM Elements
+        const modal = document.getElementById('settings-modal');
+        const openBtn = document.getElementById('open-settings-btn');
+        const footerOpenBtn = document.getElementById('footer-settings-link');
+        const closeBtn = document.getElementById('close-settings-btn');
+        const cancelBtn = document.getElementById('cancel-settings-btn');
+        const form = document.getElementById('phone-config-form');
+        const phoneInput = document.getElementById('whatsapp-number');
+        const msgInput = document.getElementById('greeting-msg');
+        const displayPhoneNum = document.getElementById('display-phone-num');
+
+        // CTA Links
+        const heroCta = document.getElementById('hero-main-cta');
+        const headerCta = document.getElementById('header-whatsapp-btn');
+        const secondaryCta = document.getElementById('secondary-whatsapp-btn');
+
+        // Initialize icons
+        lucide.createIcons();
+
+        // Set Current Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Function to Format Phone for Display
+        function formatPhoneDisplay(phone) {
+            if (!phone) return '+234 800 000 0000';
+            if (phone.startsWith('234')) {
+                return `+234 ${phone.slice(3, 6)} ${phone.slice(6, 9)} ${phone.slice(9)}`;
+            }
+            return `+${phone}`;
+        }
+
+        // Load Settings from LocalStorage
+        function loadSettings() {
+            const savedPhone = localStorage.getItem('callforhelp_phone') || DEFAULT_PHONE;
+            const savedMsg = localStorage.getItem('callforhelp_msg') || DEFAULT_MSG;
+
+            phoneInput.value = savedPhone;
+            msgInput.value = savedMsg;
+            displayPhoneNum.textContent = formatPhoneDisplay(savedPhone);
+
+            // Construct WhatsApp Link
+            const encodedMsg = encodeURIComponent(savedMsg);
+            const waUrl = `https://wa.me/${savedPhone}?text=${encodedMsg}`;
+
+            // Apply links to CTAs
+            heroCta.setAttribute('href', waUrl);
+            headerCta.setAttribute('href', waUrl);
+            secondaryCta.setAttribute('href', waUrl);
+        }
+
+        // Modal Controls
+        function openModal() {
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+        }
+
+        openBtn.addEventListener('click', openModal);
+        footerOpenBtn.addEventListener('click', openModal);
+        closeBtn.addEventListener('click', closeModal);
+        cancelBtn.addEventListener('click', closeModal);
+
+        // Save Settings
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const cleanPhone = phoneInput.value.replace(/[^0-9]/g, '');
+            const msg = msgInput.value.trim();
+
+            if (cleanPhone) {
+                localStorage.setItem('callforhelp_phone', cleanPhone);
+                localStorage.setItem('callforhelp_msg', msg);
+                loadSettings();
+                closeModal();
+            }
+        });
+
+        // Close Modal on backdrop click
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Initial Load
+        loadSettings();
+    </script>
+</body>
+</html>
